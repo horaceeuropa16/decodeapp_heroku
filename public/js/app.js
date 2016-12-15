@@ -149,11 +149,11 @@ Dotasearchid(id){
   }
 }
 }
-dotasearch(RealName){
+dotasearch(heroname){
   let objects = [];
   let r = this.dota;
   for(let i=0;i<r.length;i++){
-    let expr = (r[i].RealName.toUpperCase().indexOf(RealName.toUpperCase()) > -1);
+    let expr = (r[i].heroname.toUpperCase().indexOf(heroname.toUpperCase()) > -1);
     if(expr){
       objects.push(r[i]);
     }
@@ -463,10 +463,10 @@ class Component extends App{
     
   }
 
-  dotastorage(RealName){
+  dotastorage(heroname){
     
     let html = ``;
-    let r = this.dotasearch(RealName);
+    let r = this.dotasearch(heroname);
     for(let i=0;i<r.length;i++){
       html+= `
       <div class="col s12 m4">
